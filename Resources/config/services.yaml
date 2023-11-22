@@ -3,11 +3,10 @@ services:
     class: Rompetomp\InertiaBundle\Service\Inertia
     public: false
     arguments:
+      $container: '@service_container'
       $engine: '@twig'
       $requestStack: '@request_stack'
       $serializer: '@serializer'
-    calls:
-      - setContainer: ['@service_container']
 
   Rompetomp\InertiaBundle\Service\InertiaInterface: '@rompetomp_inertia.inertia'
 
